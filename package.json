@@ -1,0 +1,11 @@
+{
+  "name": "movable_add_tool",
+  "version": "1.0.0",
+  "description": "Utility to add SE Packages from the CLI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Curt Morgan",
+  "license": "ISC"
+}
