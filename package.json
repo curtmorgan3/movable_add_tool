@@ -1,11 +1,14 @@
 {
   "name": "movable_tool_box",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "Utility to add SE Packages from the CLI",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Curt Morgan",
-  "license": "ISC"
+  "license": "ISC",
+  "bin": {
+    "add-tool": "src/cli.js"
+  }
 }

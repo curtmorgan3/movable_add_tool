@@ -23,7 +23,7 @@ async function readFile(filePath) {
         toolLineNumber = currentLineNumber;
       } else if (input.includes("property_groups:")) {
         propertiesLineNumber = currentLineNumber;
-      } else if (input.includes("dependencies:")) {
+      } else if (input.includes("dependencies")) {
         dependenciesLineNumber = currentLineNumber;
       } else if (input.includes("appProperties(this);")) {
         appJSSetupLineNumber = currentLineNumber;

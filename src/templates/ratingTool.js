@@ -60,7 +60,7 @@ const propertiesJSDeclaration = [
 
 const assets = ["empty.png", "half.png", "star.png"];
 
-const dependencies = ["@movable-internal/rating-tool,"];
+const dependencies = ["@movable-internal/rating-tool"];
 
 const ratingToolTemplate = {
   toolDeclaration,

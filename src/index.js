@@ -1,18 +1,24 @@
-const { editFile } = require("./editUtils");
-const { addDependencies, addAssets, getRoot, getPaths } = require("./cmdUtil");
+const { editFile, getTemplate } = require("./editUtils");
+const {
+  installDependencies,
+  addAssets,
+  getRoot,
+  getPaths
+} = require("./cmdUtil");
 
-const { ratingToolTemplate } = require("./templates/ratingTool");
-const { mapToolTemplate } = require("./templates/mapTool");
-const { everyMundoToolTemplate } = require("./templates/everyMundo");
-
-async function initTool(template) {
+async function initTool(templateName) {
   try {
+    const template = getTemplate(templateName);
     console.log("Injecting code and installing dependencies...");
 
     const root = await getRoot();
-    const [manifestPath, appJSPath, propertiesJSPath, assetPath] = getPaths(
-      root
-    );
+    const [
+      manifestPath,
+      appJSPath,
+      propertiesJSPath,
+      assetPath,
+      packagePath
+    ] = getPaths(root);
 
     await editFile(manifestPath, "tools", template.toolDeclaration);
     await editFile(
@@ -20,7 +26,6 @@ async function initTool(template) {
       "manifestProperties",
       template.propertyDeclaration
     );
-    await addDependencies(template.dependencies);
     await editFile(appJSPath, "toolRegister", template.toolRegisterDeclaration);
     await editFile(appJSPath, "importStatements", template.importDeclaration);
     await editFile(
@@ -29,6 +34,7 @@ async function initTool(template) {
       template.propertiesJSDeclaration
     );
     await addAssets(assetPath, template.assets);
+    await installDependencies(template.dependencies);
 
     console.log("Complete!");
   } catch (e) {
@@ -36,11 +42,6 @@ async function initTool(template) {
   }
 }
 
-initTool(ratingToolTemplate);
-
-/*
-TODO:
-Templates for Animated Radial Dials
-              Non-Animated Radial Dials
-              Countdown Timer
-*/
+module.exports = {
+  initTool
+};
