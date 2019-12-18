@@ -50,7 +50,7 @@ const propertiesJSDeclaration = [
   "  });"
 ];
 
-const dependencies = ["@movable-internal/map-tool"];
+const dependencies = ["@movable-internal/every-mundo"];
 
 const everyMundoToolTemplate = {
   toolDeclaration: null,

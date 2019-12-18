@@ -24,8 +24,10 @@ function getTemplate(templateName) {
       return ratingToolTemplate;
     case "map":
       return mapToolTemplate;
-    case "every-mundo":
+    case "mundo":
       return everyMundoToolTemplate;
+    default:
+      return null;
   }
 }
 

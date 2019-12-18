@@ -8,10 +8,16 @@ const {
 
 async function initTool(templateName) {
   try {
-    const template = getTemplate(templateName);
     console.log("Injecting code and installing dependencies...");
+    const template = getTemplate(templateName);
+    if (!template) {
+      throw new Error(
+        `No template associated with ${templateName}. Try one of these tools: \n rating, map, mundo`
+      );
+    }
 
     const root = await getRoot();
+
     const [
       manifestPath,
       appJSPath,
