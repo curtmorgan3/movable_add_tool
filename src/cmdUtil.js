@@ -69,8 +69,8 @@ function getPaths(root) {
   const propertiesJSPath = `${root}/app/js/properties/index.js`;
   const assetPath = `${root}/app/img`;
   const packagePath = `${root}/package.json`;
-  const toolPath = `${root}/js/tools`;
-  const componentPath = `${root}/js/components`;
+  const toolPath = `${root}/app/js/tools`;
+  const componentPath = `${root}/app/js/components`;
 
   return [
     manifestPath,

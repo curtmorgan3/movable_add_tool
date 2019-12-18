@@ -22,13 +22,15 @@ Current Mappings:
   'mundo' -> Every Mundo Tool
 ```
 
-The `add-tool` command will do five things:
+The `add-tool` command will do seven things:
 
 1. Install the tool as a dependency in the `package.json`
 2. Update the `app-manifest.yml` file with the appropriate properties under `tools` and `properties`
 3. Add any assets needed to the `app/img` directory
 4. Register the tool in the `app/js/app.js` file
-5. Inject boilerplate code in the `app/js/properties/index.js` file.
+5. Inject boilerplate code in the `app/js/properties/index.js` file
+6. Add any necessary files to `app/js/tools`
+7. Add any necessary files to `app/js/components`
 
 ## Contributing
 
@@ -38,7 +40,8 @@ Adding tools to the Movable Tool Box is easy. Clone this [GitHub repo](https://g
 2.  Add a file named `<toolName>Tool.js` in the `src/templates` directory.
 3.  The template file should have seven array declarations. At the bottom of this README is the template for the rating tool. Note that the spaces in the strings should be made with **spaces, not tabs.** This will preserve their spacing in the injected code. If any declarations are not needed, set the variable to null. Declare an object that contains all of the declaration variables and export it.
 4.  In `src/editUtils.js`, import your new template at the top of the file. Then add a case in the switch statement on the `getTemplate` function. The case will be the tool name that gets called in the CLI, the result should be returning your newly imported template object.
-5.  Update README to include the mapping of tool name to the tool it's installing, plus a link to the SE Packages page for that tool.
+5.  Add any needed files for the `tools` or `components` directory in `src/files`.
+6.  Update README to include the mapping of tool name to the tool it's installing, plus a link to the SE Packages page for that tool.
 
 Once it's done, submit a PR and I'll update the package.
 
@@ -112,6 +115,10 @@ const propertiesJSDeclaration = [
 const assets = ["empty.png", "half.png", "star.png"];
 
 const dependencies = ["@movable-internal/rating-tool"];
+
+const toolFiles = null; // ['myToolFile.js']
+
+const componentFiles = null; // ['myComponentFile.js']
 
 const ratingToolTemplate = {
   toolDeclaration,

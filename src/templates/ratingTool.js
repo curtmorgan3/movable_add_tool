@@ -62,9 +62,9 @@ const assets = ["empty.png", "half.png", "star.png"];
 
 const dependencies = ["@movable-internal/rating-tool"];
 
-const toolFiles = ["test.js"];
+const toolFiles = null;
 
-const componentFiles = ["test2.js"];
+const componentFiles = null;
 
 const ratingToolTemplate = {
   toolDeclaration,
