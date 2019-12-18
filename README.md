@@ -12,7 +12,7 @@ Currently, the Movable Tool Box works with the following SE Packages:
 
 ## Usage
 
-Run `npm i movable-tool-box` or `yarn add movable-tool-box` from the root of the app.
+Run `npm i movable_tool_box` or `yarn add movable_tool_box` from the root of the app.
 Once this package is installed, run `add-tool <tool name>` from anywhere in the app.
 
 ```
