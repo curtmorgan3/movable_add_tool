@@ -1,10 +1,9 @@
-From root of app, use command add-rating-tool to
-
 # Movable Tool Box
 
 This package aims to make adding tools to custom apps easier by providing a CLI for adding SE packages.
 
 Currently, the Movable Tool Box works with the following SE Packages:
+
 [Rating Tool](https://github.com/movableink/se-packages/tree/master/rating-tool)
 
 [Every Mundo](https://github.com/movableink/se-packages/tree/master/every-mundo)
@@ -39,6 +38,7 @@ Adding tools to the Movable Tool Box is easy. Clone this [GitHub repo](https://g
 2.  Add a file named `<toolName>Tool.js` in the `src/templates` directory.
 3.  The template file should have seven array declarations. At the bottom of this README is the template for the rating tool. Note that the spaces in the strings should be made with **spaces, not tabs.** This will preserve their spacing in the injected code. If any declarations are not needed, set the variable to null. Declare an object that contains all of the declaration variables and export it.
 4.  In `src/editUtils.js`, import your new template at the top of the file. Then add a case in the switch statement on the `getTemplate` function. The case will be the tool name that gets called in the CLI, the result should be returning your newly imported template object.
+5.  Update README to include the mapping of tool name to the tool it's installing, plus a link to the SE Packages page for that tool.
 
 Once it's done, submit a PR and I'll update the package.
 
