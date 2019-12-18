@@ -13,6 +13,8 @@ const importDeclaration = [
   "import '@movable-internal/map-tool/package-manifest.yml';"
 ];
 
+const propertyDeclaration = null;
+
 const propertiesJSDeclaration = [
   "  app.setProperty('map.options', ({ getProperty }) => {",
   " ",
@@ -33,13 +35,22 @@ const propertiesJSDeclaration = [
 
 const dependencies = ["@movable-internal/map-tool"];
 
+const assets = null;
+
+const toolFiles = null;
+
+const componentFiles = null;
+
 const mapToolTemplate = {
   toolDeclaration,
-  propertyDeclaration: null,
+  propertyDeclaration,
   toolRegisterDeclaration,
   importDeclaration,
   propertiesJSDeclaration,
-  dependencies
+  dependencies,
+  assets,
+  toolFiles,
+  componentFiles
 };
 
 module.exports = {

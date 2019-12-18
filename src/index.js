@@ -3,7 +3,9 @@ const {
   installDependencies,
   addAssets,
   getRoot,
-  getPaths
+  getPaths,
+  addToolFiles,
+  addComponentFiles
 } = require("./cmdUtil");
 
 async function initTool(templateName) {
@@ -23,7 +25,9 @@ async function initTool(templateName) {
       appJSPath,
       propertiesJSPath,
       assetPath,
-      packagePath
+      packagePath,
+      toolPath,
+      componentPath
     ] = getPaths(root);
 
     await editFile(manifestPath, "tools", template.toolDeclaration);
@@ -39,8 +43,11 @@ async function initTool(templateName) {
       "bottom",
       template.propertiesJSDeclaration
     );
+
     await addAssets(assetPath, template.assets);
     await installDependencies(template.dependencies);
+    await addToolFiles(toolPath, template.toolFiles);
+    await addComponentFiles(componentPath, template.componentFiles);
 
     console.log("Complete!");
   } catch (e) {

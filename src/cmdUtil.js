@@ -37,14 +37,50 @@ async function addAssets(assetPath, assets) {
   });
 }
 
+async function addToolFiles(path, toolFileArray) {
+  return new Promise((resolve, reject) => {
+    if (toolFileArray) {
+      toolFileArray.map(async file => {
+        await exec(
+          `cp ./node_modules/movable_tool_box/src/files/${file} ${path}`
+        );
+      });
+    }
+    resolve("Complete");
+  });
+}
+
+async function addComponentFiles(path, componentFileArray) {
+  return new Promise((resolve, reject) => {
+    if (componentFileArray) {
+      componentFileArray.map(async file => {
+        await exec(
+          `cp ./node_modules/movable_tool_box/src/files/${file} ${path}`
+        );
+      });
+    }
+    resolve("Complete");
+  });
+}
+
 function getPaths(root) {
   const manifestPath = `${root}/app-manifest.yml`;
   const appJSPath = `${root}/app/js/app.js`;
   const propertiesJSPath = `${root}/app/js/properties/index.js`;
   const assetPath = `${root}/app/img`;
   const packagePath = `${root}/package.json`;
+  const toolPath = `${root}/js/tools`;
+  const componentPath = `${root}/js/components`;
 
-  return [manifestPath, appJSPath, propertiesJSPath, assetPath, packagePath];
+  return [
+    manifestPath,
+    appJSPath,
+    propertiesJSPath,
+    assetPath,
+    packagePath,
+    toolPath,
+    componentPath
+  ];
 }
 
 module.exports = {
@@ -54,5 +90,7 @@ module.exports = {
   addAssets,
   getRoot,
   getPaths,
-  cd
+  cd,
+  addToolFiles,
+  addComponentFiles
 };

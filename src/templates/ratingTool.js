@@ -62,6 +62,10 @@ const assets = ["empty.png", "half.png", "star.png"];
 
 const dependencies = ["@movable-internal/rating-tool"];
 
+const toolFiles = ["test.js"];
+
+const componentFiles = ["test2.js"];
+
 const ratingToolTemplate = {
   toolDeclaration,
   propertyDeclaration,
@@ -69,7 +73,9 @@ const ratingToolTemplate = {
   importDeclaration,
   propertiesJSDeclaration,
   dependencies,
-  assets
+  assets,
+  toolFiles,
+  componentFiles
 };
 
 module.exports = {

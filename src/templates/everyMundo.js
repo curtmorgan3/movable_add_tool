@@ -1,5 +1,9 @@
 const toolRegisterDeclaration = ["    everyMundoDataProperties(this);"];
 
+const toolDeclaration = null;
+
+const propertyDeclaration = null;
+
 const importDeclaration = [
   "import { everyMundoDataProperties } from '@movable-internal/every-mundo';",
   "import '@movable-internal/every-mundo/package-manifest.yml';"
@@ -52,13 +56,22 @@ const propertiesJSDeclaration = [
 
 const dependencies = ["@movable-internal/every-mundo"];
 
+const assets = null;
+
+const toolFiles = null;
+
+const componentFiles = null;
+
 const everyMundoToolTemplate = {
-  toolDeclaration: null,
-  propertyDeclaration: null,
+  toolDeclaration,
+  propertyDeclaration,
   toolRegisterDeclaration,
   importDeclaration,
   propertiesJSDeclaration,
-  dependencies
+  dependencies,
+  assets,
+  toolFiles,
+  componentFiles
 };
 
 module.exports = {
