@@ -127,7 +127,9 @@ const ratingToolTemplate = {
   importDeclaration,
   propertiesJSDeclaration,
   dependencies,
-  assets
+  assets,
+  toolFiles,
+  componentFiles
 };
 
 module.exports = {
